@@ -1,26 +1,10 @@
-// import React, {memo} from 'react';
-// import {Row, Col} from 'react-bootstrap';
-
-// function Tags (props){
-
-//     return <Row> <Col xs={4} style={{border: 'solid 2px grey'}}>
-//         <div style={{height: '30px', borderBottom: 'solid 1px grey'}}>{props.title}</div>
-
-//         <div style={{ textAlign: 'left'}}>
-//             {props.tagsArray.map(tag => <p>{tag}</p>)}
-//         </div>
-//   </Col></Row>
-// }
-
-// export default memo(Tags);
-
 import React, { memo } from "react";
 import { Row, Col } from "react-bootstrap";
+import PropTypes from 'prop-types';
 
 function Tags(props) {
   return (
     <>
-      {" "}
       <Row
         className={"pt-3 pb-2"}
         style={{
@@ -33,8 +17,10 @@ function Tags(props) {
         </Col>
       </Row>
 
-      <Row className={'pt-3 pb-3'} style={{backgroundColor: 'rgb(231, 231, 231)', borderRight: 'solid 1px grey', 
-      borderLeft: 'solid 1px black', borderBottom: 'solid 1px grey'}}>
+      <Row className={'pt-3 pb-3'} style={{
+        backgroundColor: 'rgb(231, 231, 231)', borderRight: 'solid 1px grey',
+        borderLeft: 'solid 1px black', borderBottom: 'solid 1px grey'
+      }}>
         {props.tagsArray.map((tag) => (
           <Col key={tag}>{tag}</Col>
         ))}
@@ -42,5 +28,10 @@ function Tags(props) {
     </>
   );
 }
+
+Tags.propTypes = {
+  tagsArray: PropTypes.array.isRequired,
+  title: PropTypes.string,
+};
 
 export default memo(Tags);

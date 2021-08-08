@@ -1,5 +1,6 @@
 import React, { memo, Fragment } from "react";
 import { Row, Col } from "react-bootstrap";
+import PropTypes from 'prop-types';
 
 function BestSellers(props) {
 
@@ -60,5 +61,10 @@ function BestSellers(props) {
     </Fragment>
   );
 }
+
+BestSellers.propTypes = {
+  title: PropTypes.string,
+  sellersArray: PropTypes.array.isRequired
+};
 
 export default memo(BestSellers);

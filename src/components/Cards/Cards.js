@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 function Cards(props) {
   return (
@@ -74,5 +75,11 @@ function Cards(props) {
     </Row>
   );
 }
+
+Cards.propTypes = {
+  title: PropTypes.string,
+  productsArray: PropTypes.array.isRequired,
+  size: PropTypes.number
+};
 
 export default memo(Cards);

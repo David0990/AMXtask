@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { Col } from "react-bootstrap";
+import PropTypes from 'prop-types';
 
 function Header(props) {
   return (
@@ -39,5 +40,14 @@ function Header(props) {
     </Col>
   );
 }
+
+Header.propTypes = {
+  imgLink: PropTypes.string.isRequired,
+  minimumHeight: PropTypes.string,
+  elementsPositions: PropTypes.string,
+  size: PropTypes.number,
+  title: PropTypes.string,
+  color: PropTypes.string
+};
 
 export default memo(Header);

@@ -2,6 +2,7 @@ import React, { memo, Fragment } from "react";
 import { Col, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from 'prop-types';
 
 function CategoriesBlock(props) {
   return (
@@ -42,5 +43,12 @@ function CategoriesBlock(props) {
     </Row>
   );
 }
+
+CategoriesBlock.propTypes = {
+  title: PropTypes.string,
+  categoriesArray: PropTypes.array.isRequired,
+  activeCategory: PropTypes.string,
+  setActiveCategory: PropTypes.func.isRequired
+};
 
 export default memo(CategoriesBlock);
