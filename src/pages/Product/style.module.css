@@ -1,0 +1,12 @@
+.descriptivePart{
+    border-bottom: solid 2px rgb(180, 180, 180);
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.icons{
+    padding: 0px 4px 2px 4px;
+    margin-right: 5px;
+    border: solid 1px black
+}
